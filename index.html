@@ -3,328 +3,1245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Coaching Center</title>
+<title>ShikhaGhor — SSC Coaching Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* GENERAL */
-body{
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background:#f0f2f5;
-  scroll-behavior:smooth;
+:root {
+  --cream: #fefdf8;
+  --white: #ffffff;
+  --off-white: #f5f3ec;
+  --green: #1d6b3e;
+  --green-light: #2d8a52;
+  --green-muted: #e3f4ea;
+  --saffron: #e8820a;
+  --saffron-light: #fef3e2;
+  --saffron-muted: #fddba5;
+  --charcoal: #1c1c1e;
+  --slate: #444446;
+  --muted: #888890;
+  --border: #e5e2d8;
+  --red: #c0392b;
+  --red-light: #fdecea;
+  --blue: #1565c0;
+  --blue-light: #e8f0fe;
+  --purple: #6a1b9a;
+  --purple-light: #f3e5f5;
+  --teal: #00695c;
+  --teal-light: #e0f2f1;
 }
 
-/* NAVBAR */
-nav{
-  background:#0d1b2a;
-  color:white;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-nav img{
-  width:140px;
-}
-nav a{
-  margin-left:20px;
-  color:white;
-  font-weight:500;
-  text-decoration:none;
-  transition:0.3s;
-}
-nav a:hover{color:#ff416c;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-/* HERO */
-.hero-main{
-  background:linear-gradient(120deg,#ff416c,#ff4b2b);
-  color:white;
-  padding:120px 20px;
-  text-align:center;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-.hero-main h1{
-  font-size:60px;
-  margin-bottom:15px;
-}
-.hero-main p{
-  font-size:22px;
-  margin-bottom:30px;
-}
-.hero-main .cta a{
-  background:#fff;
-  color:#ff416c;
-  padding:15px 35px;
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-  transition:0.3s;
-}
-.hero-main .cta a:hover{
-  background:#ffdede;
-  transform:scale(1.05);
+body {
+  font-family: 'Nunito', 'Hind Siliguri', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
 }
 
-/* FREE CLASSES */
-.hero{
-  background:#e0f7fa;
-  padding:60px 20px;
-  text-align:center;
-}
-.hero h2{
-  font-size:36px;
-  margin-bottom:20px;
-  color:#00796b;
-}
-.hero p{
-  font-size:18px;
-  margin-bottom:30px;
-}
-.videos{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-  gap:25px;
-}
-iframe{
-  width:100%;
-  height:220px;
-  border-radius:15px;
-  transition:0.3s;
-}
-iframe:hover{
-  transform:scale(1.05);
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px; }
+
+/* ======================== NAVBAR ======================== */
+nav {
+  background: rgba(254,253,248,0.93);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 72px;
 }
 
-/* INSTRUCTOR / CEO + ACADEMIC PROFILE */
-.team{
-  display:flex;
-  justify-content:center;
-  margin:60px 20px;
-}
-.profile{
-  background:white;
-  padding:50px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-  text-align:center;
-  max-width:600px;
-  transition:0.3s;
-}
-.profile:hover{
-  transform:translateY(-10px);
-}
-.profile img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:20px;
-}
-.profile h3{font-size:28px;color:#ff416c;margin-bottom:10px;}
-.profile p{font-size:16px;color:#555;margin-bottom:15px;}
-.profile ul{
-  list-style:none;
-  padding:0;
-  text-align:left;
-  margin-top:15px;
-}
-.profile ul li{
-  margin-bottom:10px;
-  position:relative;
-  padding-left:20px;
-}
-.profile ul li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  color:#ff416c;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-/* TUITION FEES */
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 20px;
-}
-.section h2{
-  text-align:center;
-  margin-bottom:40px;
-  font-size:36px;
-  color:#ff416c;
-}
-.fees{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-.card{
-  background:white;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  text-align:center;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-10px);
-}
-.card h3{color:#ff4b2b;}
-.card .price{font-size:24px;font-weight:bold;margin-top:10px;color:#00796b;}
-.enroll{
-  text-align:center;
-  margin-top:25px;
-}
-.enroll a{
-  background:#ff416c;
-  color:white;
-  padding:15px 35px;
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-  transition:0.3s;
-}
-.enroll a:hover{
-  background:#ff7b91;
-  transform:scale(1.05);
+.nav-logo-mark {
+  width: 44px;
+  height: 44px;
+  background: var(--green);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Tiro Bangla', serif;
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(29,107,62,0.3);
 }
 
-
-/* CONTACT */
-.contact{
-  background:#0d1b2a;
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-}
-.contact h2{
-  margin-bottom:25px;
-}
-.social-links a{
-  margin:0 15px;
-  display:inline-block;
-  transition:0.3s;
-}
-.social-links img{
-  width:45px;
-  height:45px;
-}
-.social-links a:hover img{
-  transform:scale(1.2);
+.nav-logo-text {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.1;
 }
 
-/* FOOTER */
-footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:25px;
+.nav-logo-text span {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-.dev{margin-top:10px;font-size:14px;color:#aaa;}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links a {
+  color: var(--slate);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  position: relative;
+  transition: color 0.25s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: var(--green);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover { color: var(--green); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--green) !important;
+  color: white !important;
+  padding: 10px 22px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  transition: background 0.25s, transform 0.2s !important;
+  box-shadow: 0 4px 14px rgba(29,107,62,0.25) !important;
+}
+
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: #155a30 !important; transform: translateY(-1px) !important; }
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  z-index: 1001;
+}
+.hamburger:hover { background: var(--off-white); }
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+}
+.mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,26,26,0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu-panel {
+  position: absolute;
+  top: 0; right: 0;
+  width: 300px; height: 100%;
+  background: var(--white);
+  box-shadow: -20px 0 60px rgba(0,0,0,0.12);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 40px;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu.open .mobile-menu-backdrop { opacity: 1; }
+.mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 72px;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-close {
+  width: 36px; height: 36px;
+  background: var(--off-white);
+  border: none; border-radius: 8px;
+  cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--slate); transition: background 0.2s;
+}
+.mobile-close:hover { background: var(--border); }
+
+.mobile-nav-links {
+  flex: 1; padding: 28px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.mobile-nav-links a {
+  color: var(--slate); font-size: 15px; font-weight: 700;
+  text-decoration: none; padding: 13px 16px; border-radius: 10px;
+  display: flex; align-items: center; gap: 12px; transition: all 0.2s;
+}
+.mobile-nav-links a:hover { background: var(--green-muted); color: var(--green); }
+.mobile-nav-icon {
+  width: 32px; height: 32px;
+  background: var(--off-white); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; flex-shrink: 0;
+}
+.mobile-nav-divider { height: 1px; background: var(--border); margin: 8px 0; }
+.mobile-enroll {
+  margin: 0 28px;
+  display: block; text-align: center; padding: 15px;
+  background: var(--green); color: white; border-radius: 12px;
+  font-weight: 800; font-size: 15px; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(29,107,62,0.3); transition: all 0.25s;
+}
+.mobile-enroll:hover { background: #155a30; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ======================== HERO ======================== */
+.hero-section {
+  min-height: 100vh;
+  background: var(--white);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg-decor { position: absolute; inset: 0; pointer-events: none; }
+
+.hero-bg-decor .blob-1 {
+  position: absolute;
+  top: -140px; right: -140px;
+  width: 550px; height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e3f4ea 0%, transparent 65%);
+  opacity: 0.8;
+}
+.hero-bg-decor .blob-2 {
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fef3e2 0%, transparent 65%);
+  opacity: 0.7;
+}
+.hero-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.4;
+}
+
+.hero-content {
+  max-width: 1200px; margin: 0 auto;
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative; z-index: 2; width: 100%;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center; gap: 8px;
+  background: var(--green-muted); color: var(--green);
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 8px 18px; border-radius: 50px;
+  margin-bottom: 28px;
+  animation: fadeSlideUp 0.7s ease both;
+}
+.hero-badge .dot {
+  width: 7px; height: 7px;
+  background: var(--green); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.6);opacity:0.5}
+}
+
+.hero-title {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 60px; font-weight: 700;
+  line-height: 1.1; color: var(--charcoal);
+  margin-bottom: 22px;
+  animation: fadeSlideUp 0.7s 0.1s ease both;
+}
+.hero-title .highlight {
+  color: var(--green); position: relative; display: inline-block;
+}
+.hero-title .highlight::after {
+  content: '';
+  position: absolute; bottom: 6px; left: 0; width: 100%; height: 8px;
+  background: var(--green-muted); z-index: -1; border-radius: 4px;
+}
+.hero-title .accent { color: var(--saffron); }
+
+.hero-subtitle {
+  font-size: 16px; color: var(--slate);
+  line-height: 1.8; margin-bottom: 38px;
+  animation: fadeSlideUp 0.7s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex; gap: 14px;
+  animation: fadeSlideUp 0.7s 0.3s ease both;
+}
+
+.btn-primary {
+  background: var(--green); color: white;
+  padding: 15px 30px; border-radius: 10px;
+  font-weight: 800; font-size: 14px; text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 4px 18px rgba(29,107,62,0.3);
+  letter-spacing: 0.03em;
+}
+.btn-primary:hover {
+  background: #155a30; transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(29,107,62,0.4);
+}
+
+.btn-secondary {
+  background: transparent; color: var(--charcoal);
+  padding: 15px 30px; border-radius: 10px;
+  font-weight: 700; font-size: 14px; text-decoration: none;
+  border: 1.5px solid var(--border); transition: all 0.25s;
+}
+.btn-secondary:hover {
+  border-color: var(--green); color: var(--green);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex; gap: 28px;
+  margin-top: 48px; padding-top: 36px;
+  border-top: 1px solid var(--border);
+  animation: fadeSlideUp 0.7s 0.4s ease both;
+}
+.stat-item .num {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 30px; font-weight: 700; color: var(--charcoal);
+}
+.stat-item .num span { color: var(--green); }
+.stat-item .label {
+  font-size: 11px; color: var(--muted);
+  letter-spacing: 0.05em; margin-top: 3px; font-weight: 600;
+}
+
+/* HERO VISUAL */
+.hero-visual {
+  position: relative;
+  animation: fadeSlideUp 0.7s 0.2s ease both;
+}
+.hero-card-main {
+  background: white; border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08), 0 0 0 1px var(--border);
+  position: relative; z-index: 2;
+}
+.hero-card-label {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px;
+}
+.course-list-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid var(--off-white);
+}
+.course-list-item:last-child { border-bottom: none; }
+.course-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.course-icon.c1 { background: #fdecea; }
+.course-icon.c2 { background: #e8f0fe; }
+.course-icon.c3 { background: #f3e5f5; }
+.course-icon.c4 { background: #e0f2f1; }
+.course-icon.c5 { background: #fff8e1; }
+.course-name { font-weight: 700; font-size: 14px; color: var(--charcoal); }
+.course-price {
+  margin-left: auto; font-size: 12px; font-weight: 800;
+  color: var(--green); background: var(--green-muted);
+  padding: 4px 10px; border-radius: 6px;
+}
+
+.hero-card-float {
+  position: absolute; background: white;
+  border-radius: 16px; padding: 14px 18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+.float-top { top: -22px; right: -22px; z-index: 3; display: flex; align-items: center; gap: 10px; }
+.float-bottom { bottom: -22px; left: -22px; z-index: 3; }
+.float-avatar {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: white; font-family: 'Tiro Bangla', serif; font-size: 16px; font-weight: 700;
+}
+.float-text .top { font-size: 13px; font-weight: 700; color: var(--charcoal); }
+.float-text .bottom { font-size: 11px; color: var(--muted); }
+.float-bottom .stars { display: flex; gap: 2px; margin-bottom: 3px; }
+.float-bottom .star { color: #f59e0b; font-size: 13px; }
+.float-bottom .rating-text { font-size: 12px; color: var(--slate); font-weight: 600; }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================== SECTION HEADER ======================== */
+.section-header { text-align: center; margin-bottom: 52px; }
+.section-tag {
+  display: inline-block; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green); background: var(--green-muted);
+  padding: 6px 16px; border-radius: 50px; margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 42px; font-weight: 700; color: var(--charcoal);
+  line-height: 1.2; margin-bottom: 14px;
+}
+.section-subtitle {
+  font-size: 15px; color: var(--muted);
+  max-width: 500px; margin: 0 auto; line-height: 1.75;
+}
+
+/* ======================== SUBJECTS STRIP ======================== */
+.subjects-strip {
+  background: var(--green);
+  padding: 18px 60px;
+  display: flex; align-items: center; gap: 0;
+  overflow: hidden;
+}
+.subjects-strip-inner {
+  display: flex; gap: 40px; align-items: center;
+  animation: stripScroll 18s linear infinite;
+  white-space: nowrap;
+}
+@keyframes stripScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.strip-item {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  flex-shrink: 0;
+}
+.strip-dot { color: rgba(255,255,255,0.4); font-size: 18px; }
+
+/* ======================== FREE CLASSES ======================== */
+.classes-section {
+  padding: 90px 60px; background: var(--off-white);
+}
+.classes-inner { max-width: 1200px; margin: 0 auto; }
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 22px;
+}
+.video-card {
+  background: white; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--border); transition: all 0.3s ease;
+}
+.video-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+.video-card iframe { width: 100%; height: 210px; border: none; display: block; }
+.video-card-info { padding: 16px 20px; display: flex; align-items: center; gap: 10px; }
+.video-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 50px;
+}
+.label-physics { color: var(--red); background: var(--red-light); }
+.label-chem { color: var(--blue); background: var(--blue-light); }
+.label-math { color: var(--purple); background: var(--purple-light); }
+.label-eng { color: var(--teal); background: var(--teal-light); }
+.label-bangla { color: var(--saffron); background: var(--saffron-light); }
+.video-free-tag {
+  margin-left: auto; font-size: 11px; font-weight: 800;
+  color: var(--green); background: var(--green-muted);
+  padding: 4px 10px; border-radius: 6px; letter-spacing: 0.06em;
+}
+
+/* ======================== INSTRUCTOR ======================== */
+.instructor-section {
+  padding: 90px 60px; background: var(--white);
+}
+.instructor-inner { max-width: 1200px; margin: 0 auto; }
+.instructor-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 70px; align-items: center;
+}
+
+.instructor-image-wrap { position: relative; }
+.instructor-image-bg {
+  position: absolute; inset: 28px 28px 0 0;
+  background: var(--green-muted); border-radius: 24px;
+}
+.instructor-image-frame {
+  position: relative; z-index: 2; background: white;
+  border-radius: 24px; border: 1px solid var(--border);
+  padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+.instructor-image-placeholder {
+  width: 100%; aspect-ratio: 1; border-radius: 16px;
+  background: linear-gradient(135deg, var(--green-muted), var(--off-white));
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+}
+.instructor-image-placeholder .initials {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 68px; font-weight: 700; color: var(--green); line-height: 1;
+}
+.instructor-image-placeholder .name-label { font-size: 16px; font-weight: 700; color: var(--slate); }
+
+.instructor-badge {
+  position: absolute; bottom: 10px; right: 10px; z-index: 3;
+  background: white; border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex; align-items: center; gap: 12px;
+}
+.badge-icon {
+  width: 44px; height: 44px; background: var(--green);
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; font-size: 22px;
+}
+.badge-text .top { font-size: 15px; font-weight: 800; color: var(--charcoal); }
+.badge-text .bottom { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.instructor-info .eyebrow {
+  font-size: 12px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green); margin-bottom: 14px;
+}
+.instructor-info h2 {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 46px; font-weight: 700; color: var(--charcoal);
+  line-height: 1.1; margin-bottom: 6px;
+}
+.instructor-info .role {
+  font-size: 15px; font-weight: 600; color: var(--muted); margin-bottom: 20px;
+}
+.instructor-info .bio {
+  font-size: 15px; color: var(--slate); line-height: 1.85; margin-bottom: 28px;
+}
+
+.credentials-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.cred-item { display: flex; align-items: flex-start; gap: 14px; }
+.cred-icon {
+  width: 36px; height: 36px; background: var(--green-muted);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; font-size: 16px; flex-shrink: 0;
+}
+.cred-text { font-size: 14px; color: var(--slate); font-weight: 600; line-height: 1.5; }
+.cred-text strong { color: var(--charcoal); font-weight: 800; }
+
+/* ======================== FEES ======================== */
+.fees-section { padding: 90px 60px; background: var(--off-white); }
+.fees-inner { max-width: 1200px; margin: 0 auto; }
+
+.fees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.fee-card {
+  background: white; border-radius: 22px; padding: 30px 26px;
+  border: 1.5px solid var(--border); position: relative;
+  transition: all 0.3s ease; overflow: hidden;
+}
+.fee-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 4px; background: var(--border); transition: background 0.3s;
+}
+.fee-card:hover {
+  transform: translateY(-8px); border-color: #a8d5b8;
+  box-shadow: 0 20px 50px rgba(29,107,62,0.1);
+}
+.fee-card:hover::before { background: var(--green); }
+
+.fee-card.featured { background: var(--charcoal); border-color: var(--charcoal); }
+.fee-card.featured::before { background: var(--saffron); }
+.fee-card.featured .course-tag, .fee-card.featured .fee-desc { color: rgba(255,255,255,0.5); }
+.fee-card.featured .fee-name { color: white; }
+.fee-card.featured .fee-amount { color: #fddba5; }
+.fee-card.featured .fee-feature { color: rgba(255,255,255,0.7); }
+.fee-card.featured .feature-check { color: #fddba5; }
+.fee-card.featured .fee-divider { background: rgba(255,255,255,0.1); }
+
+.fee-popular {
+  position: absolute; top: 18px; right: 18px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: white; background: var(--saffron); padding: 5px 12px; border-radius: 50px;
+}
+
+.fee-emoji { font-size: 30px; margin-bottom: 16px; display: block; }
+.course-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+}
+.fee-name {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px;
+}
+.fee-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+.fee-amount {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 32px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px;
+}
+.fee-amount span { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 400; color: var(--muted); }
+.fee-divider { height: 1px; background: var(--border); margin: 18px 0; }
+.fee-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
+.fee-feature { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--slate); font-weight: 600; }
+.feature-check { color: var(--green); font-size: 14px; }
+
+.fee-btn {
+  display: block; text-align: center; padding: 13px; border-radius: 10px;
+  font-weight: 800; font-size: 13px; text-decoration: none; transition: all 0.25s;
+  background: var(--off-white); color: var(--charcoal);
+  border: 1.5px solid var(--border); letter-spacing: 0.03em;
+}
+.fee-btn:hover { background: var(--green); color: white; border-color: var(--green); transform: translateY(-1px); }
+.fee-card.featured .fee-btn { background: var(--saffron); color: white; border-color: var(--saffron); }
+.fee-card.featured .fee-btn:hover { background: #c96d06; }
+
+/* ======================== CONTACT ======================== */
+.contact-section {
+  padding: 90px 60px;
+  background: var(--green);
+  position: relative; overflow: hidden;
+}
+.contact-decor { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.contact-decor .ring {
+  position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.07);
+}
+.contact-decor .ring-1 { width: 600px; height: 600px; top: -200px; right: -200px; }
+.contact-decor .ring-2 { width: 400px; height: 400px; top: -100px; right: -100px; }
+.contact-decor .ring-3 { width: 500px; height: 500px; bottom: -200px; left: -200px; }
+
+.contact-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+
+.contact-left .eyebrow {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #a8d5b8; margin-bottom: 18px;
+}
+.contact-left h2 {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 44px; font-weight: 700; color: white; line-height: 1.15; margin-bottom: 18px;
+}
+.contact-left p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 36px; }
+
+.contact-items { display: flex; flex-direction: column; gap: 16px; }
+.contact-item { display: flex; align-items: center; gap: 16px; }
+.contact-item-icon {
+  width: 46px; height: 46px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-item-text .label {
+  font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase;
+  letter-spacing: 0.08em; font-weight: 700; margin-bottom: 2px;
+}
+.contact-item-text .value { font-size: 15px; color: white; font-weight: 600; }
+
+.contact-right {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px; padding: 38px;
+}
+.contact-right h3 {
+  font-family: 'Tiro Bangla', serif;
+  font-size: 24px; color: white; margin-bottom: 7px;
+}
+.contact-right .sub { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 28px; }
+
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 26px; }
+.social-card {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 16px; text-decoration: none; transition: all 0.25s;
+  display: flex; align-items: center; gap: 10px;
+}
+.social-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
+.social-icon-wrap {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 17px;
+}
+.s-fb { background: #1877f225; }
+.s-ig { background: #e4405f25; }
+.s-yt { background: #ff000025; }
+.s-wa { background: #25d36625; }
+.social-card-name { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.85); }
+.social-card-handle { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 1px; }
+
+.enroll-cta {
+  display: block; text-align: center; padding: 16px;
+  background: var(--saffron); color: white; border-radius: 12px;
+  font-weight: 800; font-size: 15px; text-decoration: none;
+  transition: all 0.25s; box-shadow: 0 4px 20px rgba(232,130,10,0.35);
+  letter-spacing: 0.02em;
+}
+.enroll-cta:hover { background: #c96d06; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,130,10,0.45); }
+
+/* ======================== FOOTER ======================== */
+footer {
+  background: #0e2e1a; padding: 26px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  flex-wrap: wrap; gap: 10px;
+}
+.footer-left { font-size: 13px; color: rgba(255,255,255,0.35); }
+.footer-left a { color: #a8d5b8; text-decoration: none; }
+.footer-center { font-size: 12px; color: rgba(255,255,255,0.25); text-align: center; }
+.footer-center a {
+  color: #a8d5b8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.footer-center a:hover { color: #d4edda; }
+.footer-right { font-size: 12px; color: rgba(255,255,255,0.2); }
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; padding: 60px 24px; }
+  .hero-visual { display: none; }
+  .hero-title { font-size: 42px; }
+  .classes-section, .instructor-section, .fees-section, .contact-section { padding: 70px 24px; }
+  .subjects-strip { padding: 16px 24px; }
+  .instructor-grid { grid-template-columns: 1fr; gap: 36px; }
+  .instructor-image-wrap { max-width: 360px; margin: 0 auto; }
+  .contact-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+  .footer-center { order: 3; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav>
-<img src="img/logo.png" alt="Logo">
-<div>
-<a href="#hero-main">Home</a>
-<a href="#classes">Free Classes</a>
-<a href="#team">Instructor & CEO</a>
-<a href="#fees">Tuition Fees</a>
-<a href="#contact">Contact</a>
-</div>
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-mark">শ</div>
+    <div class="nav-logo-text">
+      ShikhaGhor
+      <span>SSC Coaching Center</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#classes">Free Classes</a>
+    <a href="#instructor">Instructor</a>
+    <a href="#fees">Fees</a>
+    <a href="#contact" class="nav-cta">Enroll Now</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-backdrop" id="menuBackdrop"></div>
+  <div class="mobile-menu-panel">
+    <div class="mobile-menu-header">
+      <a href="#hero" class="nav-logo" onclick="closeMenu()">
+        <div class="nav-logo-mark">শ</div>
+        <div class="nav-logo-text">ShikhaGhor<span>SSC Coaching</span></div>
+      </a>
+      <button class="mobile-close" id="menuClose">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#hero" onclick="closeMenu()"><span class="mobile-nav-icon">🏠</span> Home</a>
+      <a href="#classes" onclick="closeMenu()"><span class="mobile-nav-icon">▶️</span> Free Classes</a>
+      <a href="#instructor" onclick="closeMenu()"><span class="mobile-nav-icon">👨‍🏫</span> Instructor</a>
+      <a href="#fees" onclick="closeMenu()"><span class="mobile-nav-icon">💎</span> Tuition Fees</a>
+      <a href="#contact" onclick="closeMenu()"><span class="mobile-nav-icon">📍</span> Contact</a>
+      <div class="mobile-nav-divider"></div>
+    </div>
+    <a href="#contact" class="mobile-enroll" onclick="closeMenu()">Enroll Now →</a>
+  </div>
+</div>
+
 <!-- HERO -->
-<div class="hero-main" id="hero-main">
-<h1>Aditya Coaching Center</h1>
-<p>Learn Programming, Competitive Programming & CSE Prep Online</p>
-<div class="cta"><a href="https://portfolio-gcr4.vercel.app/?fbclid=IwY2xjawQXe3tleHRuA2FlbQIxMABicmlkETF3eE5SZlhuUkpscTA2cHhqc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHkzZHF0ietJG9ai9_YZyskwUNeZYu8oq7xW3vdUTQe59hnJBxQm2LzRTfbuD_aem_L-D-_-dPgBNfssmpcWKGqg" target="_blank">Enroll Now</a></div>
+<section class="hero-section" id="hero">
+  <div class="hero-bg-decor">
+    <div class="hero-grid-pattern"></div>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        SSC 2025–26 Batch Now Open
+      </div>
+      <h1 class="hero-title">
+        পড়ো মন দিয়ে,<br>
+        <span class="highlight">এগিয়ে</span> যাও <span class="accent">সামনে</span>
+      </h1>
+      <p class="hero-subtitle">
+        Physics, Chemistry, Math, English & Bangla — all in one place. Expert-led SSC coaching designed for Class 9–10 students in Bangladesh, at a price every family can afford.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Enroll Now →</a>
+        <a href="#classes" class="btn-secondary">Watch Free Classes</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="num">5<span>+</span></div>
+          <div class="label">Subjects Covered</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">৳500<span>~</span></div>
+          <div class="label">Starting Monthly</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">SSC<span></span></div>
+          <div class="label">Focused Curriculum</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-float float-top">
+        <div class="float-avatar">ন</div>
+        <div class="float-text">
+          <div class="top">Nasrin Akter</div>
+          <div class="bottom">Lead Instructor</div>
+        </div>
+      </div>
+      <div class="hero-card-main">
+        <div class="hero-card-label">📚 All Subjects</div>
+        <div class="course-list-item">
+          <div class="course-icon c1">⚛️</div>
+          <div class="course-name">Physics</div>
+          <div class="course-price">৳800/mo</div>
+        </div>
+        <div class="course-list-item">
+          <div class="course-icon c2">🧪</div>
+          <div class="course-name">Chemistry</div>
+          <div class="course-price">৳800/mo</div>
+        </div>
+        <div class="course-list-item">
+          <div class="course-icon c3">📐</div>
+          <div class="course-name">Mathematics</div>
+          <div class="course-price">৳1,000/mo</div>
+        </div>
+        <div class="course-list-item">
+          <div class="course-icon c4">🔤</div>
+          <div class="course-name">English</div>
+          <div class="course-price">৳700/mo</div>
+        </div>
+        <div class="course-list-item">
+          <div class="course-icon c5">📖</div>
+          <div class="course-name">Bangla</div>
+          <div class="course-price">৳500/mo</div>
+        </div>
+      </div>
+      <div class="hero-card-float float-bottom">
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="rating-text">Loved by SSC students</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS STRIP -->
+<div class="subjects-strip">
+  <div class="subjects-strip-inner">
+    <div class="strip-item">⚛️ Physics</div><div class="strip-dot">·</div>
+    <div class="strip-item">🧪 Chemistry</div><div class="strip-dot">·</div>
+    <div class="strip-item">📐 Mathematics</div><div class="strip-dot">·</div>
+    <div class="strip-item">🔤 English</div><div class="strip-dot">·</div>
+    <div class="strip-item">📖 Bangla</div><div class="strip-dot">·</div>
+    <div class="strip-item">🎯 SSC Prep</div><div class="strip-dot">·</div>
+    <!-- duplicate for seamless loop -->
+    <div class="strip-item">⚛️ Physics</div><div class="strip-dot">·</div>
+    <div class="strip-item">🧪 Chemistry</div><div class="strip-dot">·</div>
+    <div class="strip-item">📐 Mathematics</div><div class="strip-dot">·</div>
+    <div class="strip-item">🔤 English</div><div class="strip-dot">·</div>
+    <div class="strip-item">📖 Bangla</div><div class="strip-dot">·</div>
+    <div class="strip-item">🎯 SSC Prep</div><div class="strip-dot">·</div>
+  </div>
 </div>
 
 <!-- FREE CLASSES -->
-<div class="hero" id="classes">
-<h2>Free Classes</h2>
-<p>Watch selected YouTube tutorials</p>
-<div class="videos">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YI-Eg9ysl8Q?si=EHPIH0uHZI2n3C-P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/htBrU0KRCOw?si=X6DApS2piqQ9hsRN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nSBwr695CsM?si=9-voIL4IL9TyO0Qa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HwwO2nDjpkE?si=0eO0kHqjajYgr_li" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nSBwr695CsM?si=_DsyTEcn1c02IAKz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</div>
+<section class="classes-section" id="classes">
+  <div class="classes-inner">
+    <div class="section-header">
+      <div class="section-tag">▶ Free Resources</div>
+      <h2 class="section-title">Start Learning Today — For Free</h2>
+      <p class="section-subtitle">Watch sample lessons from all subjects. No sign-up, no cost — just learning.</p>
+    </div>
+    <div class="videos-grid">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/YI-Eg9ysl8Q?si=EHPIH0uHZI2n3C-P" title="Physics lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-card-info">
+          <div class="video-label label-physics">⚛️ Physics</div>
+          <div class="video-free-tag">FREE</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/htBrU0KRCOw?si=X6DApS2piqQ9hsRN" title="Chemistry lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-card-info">
+          <div class="video-label label-chem">🧪 Chemistry</div>
+          <div class="video-free-tag">FREE</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/nSBwr695CsM?si=9-voIL4IL9TyO0Qa" title="Mathematics lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-card-info">
+          <div class="video-label label-math">📐 Mathematics</div>
+          <div class="video-free-tag">FREE</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/HwwO2nDjpkE?si=0eO0kHqjajYgr_li" title="English lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-card-info">
+          <div class="video-label label-eng">🔤 English</div>
+          <div class="video-free-tag">FREE</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/nSBwr695CsM?si=_DsyTEcn1c02IAKz" title="Bangla lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-card-info">
+          <div class="video-label label-bangla">📖 Bangla</div>
+          <div class="video-free-tag">FREE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- INSTRUCTOR + ACADEMIC PROFILE -->
-<div class="section" id="team">
-<h2>Instructor & CEO</h2>
-<div class="team">
-<div class="profile">
-<img src="img/profilemain.jpeg" alt="Instructor">
-<h3>Aditya Shil</h3>
-<p>CEO & Instructor</p>
-<p>CSE student passionate about teaching programming, web development, and leading this coaching center.</p>
-<ul>
-<li>B.Sc in CSE - North South University</li>
-<li>Competitive Programming Expert</li>
-<li>Web Development: HTML, CSS, JavaScript, React</li>
-<li>Certified in [Your Certifications]</li>
-</ul>
-</div>
-</div>
-</div>
+<!-- INSTRUCTOR -->
+<section class="instructor-section" id="instructor">
+  <div class="instructor-inner">
+    <div class="instructor-grid">
+      <div class="instructor-image-wrap">
+        <div class="instructor-image-bg"></div>
+        <div class="instructor-image-frame">
+          <div class="instructor-image-placeholder">
+            <div class="initials">না</div>
+            <div class="name-label">Nasrin Akter</div>
+          </div>
+        </div>
+        <div class="instructor-badge">
+          <div class="badge-icon">🏅</div>
+          <div class="badge-text">
+            <div class="top">DU Graduate</div>
+            <div class="bottom">B.Sc in Physics</div>
+          </div>
+        </div>
+      </div>
 
-<!-- TUITION FEES -->
-<div class="section" id="fees">
-<h2>Tuition Fees</h2>
-<div class="fees">
-<div class="card">
-<h3>Programming Basics</h3>
-<p>HTML, C, Java</p>
-<div class="price">৳2000 / month</div>
-</div>
-<div class="card">
-<h3>Competitive Programming</h3>
-<p>Algorithms & Problem Solving</p>
-<div class="price">৳3000 / month</div>
-</div>
-<div class="card">
-<h3>Web Development</h3>
-<p>HTML, CSS, React</p>
-<div class="price">৳3500 / month</div>
-</div>
-<div class="card">
-<h3>University CSE Prep</h3>
-<p>Programming + Math</p>
-<div class="price">৳2500 / month</div>
-</div>
-</div>
-<div class="enroll"><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank">Enroll Now</a></div>
-</div>
+      <div class="instructor-info">
+        <div class="eyebrow">Meet Your Instructor</div>
+        <h2>Nasrin Akter</h2>
+        <div class="role">Founder & Lead Instructor · ShikhaGhor</div>
+        <p class="bio">
+          A passionate educator from Dhaka University with a love for making science and math feel simple. Nasrin has been tutoring SSC students for over 5 years and believes that every child — regardless of background — can achieve a GPA 5.00 with the right guidance.
+        </p>
+        <div class="credentials-list">
+          <div class="cred-item">
+            <div class="cred-icon">🎓</div>
+            <div class="cred-text"><strong>B.Sc in Physics (Honors)</strong><br>University of Dhaka</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">🏆</div>
+            <div class="cred-text"><strong>5+ Years SSC Teaching Experience</strong><br>Physics, Chemistry & Mathematics</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">📝</div>
+            <div class="cred-text"><strong>Specialist in Board Exam Preparation</strong><br>Proven GPA 5 results for students</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">🌐</div>
+            <div class="cred-text"><strong>Online & Offline Teaching</strong><br>Zoom, Google Meet & in-person classes</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary">Enroll With Nasrin →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees-section" id="fees">
+  <div class="fees-inner">
+    <div class="section-header">
+      <div class="section-tag">💎 Pricing</div>
+      <h2 class="section-title">Affordable, Honest Pricing</h2>
+      <p class="section-subtitle">Every plan includes live sessions, notes & direct instructor support. No hidden charges.</p>
+    </div>
+    <div class="fees-grid">
+
+      <div class="fee-card">
+        <span class="fee-emoji">📖</span>
+        <div class="course-tag">Language</div>
+        <div class="fee-name">Bangla</div>
+        <div class="fee-desc">Grammar, literature & essay writing for SSC Board exams.</div>
+        <div class="fee-amount">৳500 <span>/ month</span></div>
+        <div class="fee-divider"></div>
+        <ul class="fee-features">
+          <li class="fee-feature"><span class="feature-check">✓</span> Grammar & sahitya</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Rachana writing</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> MCQ practice</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Live sessions</li>
+        </ul>
+        <a href="#contact" class="fee-btn">Get Started</a>
+      </div>
+
+      <div class="fee-card">
+        <span class="fee-emoji">🔤</span>
+        <div class="course-tag">Language</div>
+        <div class="fee-name">English</div>
+        <div class="fee-desc">Grammar, writing skills & reading comprehension for SSC.</div>
+        <div class="fee-amount">৳700 <span>/ month</span></div>
+        <div class="fee-divider"></div>
+        <ul class="fee-features">
+          <li class="fee-feature"><span class="feature-check">✓</span> Grammar & vocabulary</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Paragraph & letter writing</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Reading comprehension</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Live sessions</li>
+        </ul>
+        <a href="#contact" class="fee-btn">Get Started</a>
+      </div>
+
+      <div class="fee-card">
+        <span class="fee-emoji">⚛️</span>
+        <div class="course-tag">Science</div>
+        <div class="fee-name">Physics</div>
+        <div class="fee-desc">Full SSC Physics syllabus with concept-based learning & problem solving.</div>
+        <div class="fee-amount">৳800 <span>/ month</span></div>
+        <div class="fee-divider"></div>
+        <ul class="fee-features">
+          <li class="fee-feature"><span class="feature-check">✓</span> Board syllabus coverage</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Numerical problems</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Past paper practice</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Live sessions</li>
+        </ul>
+        <a href="#contact" class="fee-btn">Get Started</a>
+      </div>
+
+      <div class="fee-card">
+        <span class="fee-emoji">🧪</span>
+        <div class="course-tag">Science</div>
+        <div class="fee-name">Chemistry</div>
+        <div class="fee-desc">Reactions, equations & concepts made easy for SSC students.</div>
+        <div class="fee-amount">৳800 <span>/ month</span></div>
+        <div class="fee-divider"></div>
+        <ul class="fee-features">
+          <li class="fee-feature"><span class="feature-check">✓</span> Reaction & bonding</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Equation balancing</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> MCQ & CQ prep</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Live sessions</li>
+        </ul>
+        <a href="#contact" class="fee-btn">Get Started</a>
+      </div>
+
+      <div class="fee-card featured">
+        <div class="fee-popular">Best Value</div>
+        <span class="fee-emoji">📐</span>
+        <div class="course-tag">Core Subject</div>
+        <div class="fee-name">Mathematics</div>
+        <div class="fee-desc">Algebra, geometry & trigonometry — the most important SSC subject.</div>
+        <div class="fee-amount">৳1,000 <span>/ month</span></div>
+        <div class="fee-divider"></div>
+        <ul class="fee-features">
+          <li class="fee-feature"><span class="feature-check">✓</span> Full SSC syllabus</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Step-by-step solving</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> Weekly mock tests</li>
+          <li class="fee-feature"><span class="feature-check">✓</span> 1-on-1 doubt sessions</li>
+        </ul>
+        <a href="#contact" class="fee-btn">Enroll Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
-<div class="contact" id="contact">
-<h2>Contact</h2>
-<p>Teacher: Aditya Shil</p>
-<p>Phone: 017XXXXXXXX</p>
-<p>Email: aditya@email.com</p>
-<p>Location: Dhaka, Bangladesh</p>
-<div class="social-links">
-<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook"></a>
-<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
-<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
-</div>
-</div>
+<section class="contact-section" id="contact">
+  <div class="contact-decor">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Ready to Begin Your SSC Journey?</h2>
+        <p>Contact us anytime — we respond quickly and are happy to help you pick the right course for your child.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">👩‍🏫</div>
+            <div class="contact-item-text">
+              <div class="label">Instructor</div>
+              <div class="value">Nasrin Akter</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <div class="label">Phone / WhatsApp</div>
+              <div class="value">017XXXXXXXX</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-text">
+              <div class="label">Email</div>
+              <div class="value">shikhaghor@email.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="label">Location</div>
+              <div class="value">Dhaka, Bangladesh (Online & Offline)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <h3>Connect With Us</h3>
+        <p class="sub">Follow for free tips, schedules & announcements</p>
+        <div class="social-grid">
+          <a href="#" class="social-card">
+            <div class="social-icon-wrap s-fb">📘</div>
+            <div>
+              <div class="social-card-name">Facebook</div>
+              <div class="social-card-handle">ShikhaGhor</div>
+            </div>
+          </a>
+          <a href="#" class="social-card">
+            <div class="social-icon-wrap s-wa">💬</div>
+            <div>
+              <div class="social-card-name">WhatsApp</div>
+              <div class="social-card-handle">Direct Message</div>
+            </div>
+          </a>
+          <a href="#" class="social-card">
+            <div class="social-icon-wrap s-yt">▶️</div>
+            <div>
+              <div class="social-card-name">YouTube</div>
+              <div class="social-card-handle">Free Lessons</div>
+            </div>
+          </a>
+          <a href="#" class="social-card">
+            <div class="social-icon-wrap s-ig">📸</div>
+            <div>
+              <div class="social-card-name">Instagram</div>
+              <div class="social-card-handle">@shikhaghor</div>
+            </div>
+          </a>
+        </div>
+        <a href="tel:017XXXXXXXX" class="enroll-cta">Call Now to Enroll — Seats Are Limited →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-<div class="dev">Developed by Aditya Shil</div>
-<div class="dev">This is a demo website</div>
-<div class="dev">Visit Developer's portfolio:<div class="cta"><a href="https://portfolio-gcr4.vercel.app/?fbclid=IwY2xjawQXe3tleHRuA2FlbQIxMABicmlkETF3eE5SZlhuUkpscTA2cHhqc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHkzZHF0ietJG9ai9_YZyskwUNeZYu8oq7xW3vdUTQe59hnJBxQm2LzRTfbuD_aem_L-D-_-dPgBNfssmpcWKGqg" target="_blank">Portfolio</a></div></div>
+  <div class="footer-left">
+    © 2025 <a href="#">ShikhaGhor (শিখাঘর)</a> · SSC Coaching Center · Dhaka, Bangladesh
+  </div>
+  <div class="footer-center">
+    Designed & Developed by <a href="https://portfolio-gcr4.vercel.app/" target="_blank" rel="noopener noreferrer">Aditya Shil</a>
+  </div>
+  <div class="footer-right">Empowering SSC Students</div>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuClose = document.getElementById('menuClose');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuBackdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+</script>
 </body>
 </html>
