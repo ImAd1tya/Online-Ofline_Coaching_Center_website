@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Coaching Center</title>
+<style>
+/* GENERAL */
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#f0f2f5;
+  scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+  background:#0d1b2a;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+nav img{
+  width:140px;
+}
+nav a{
+  margin-left:20px;
+  color:white;
+  font-weight:500;
+  text-decoration:none;
+  transition:0.3s;
+}
+nav a:hover{color:#ff416c;}
+
+/* HERO */
+.hero-main{
+  background:linear-gradient(120deg,#ff416c,#ff4b2b);
+  color:white;
+  padding:120px 20px;
+  text-align:center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.hero-main h1{
+  font-size:60px;
+  margin-bottom:15px;
+}
+.hero-main p{
+  font-size:22px;
+  margin-bottom:30px;
+}
+.hero-main .cta a{
+  background:#fff;
+  color:#ff416c;
+  padding:15px 35px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+.hero-main .cta a:hover{
+  background:#ffdede;
+  transform:scale(1.05);
+}
+
+/* FREE CLASSES */
+.hero{
+  background:#e0f7fa;
+  padding:60px 20px;
+  text-align:center;
+}
+.hero h2{
+  font-size:36px;
+  margin-bottom:20px;
+  color:#00796b;
+}
+.hero p{
+  font-size:18px;
+  margin-bottom:30px;
+}
+.videos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:25px;
+}
+iframe{
+  width:100%;
+  height:220px;
+  border-radius:15px;
+  transition:0.3s;
+}
+iframe:hover{
+  transform:scale(1.05);
+}
+
+/* INSTRUCTOR / CEO + ACADEMIC PROFILE */
+.team{
+  display:flex;
+  justify-content:center;
+  margin:60px 20px;
+}
+.profile{
+  background:white;
+  padding:50px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  text-align:center;
+  max-width:600px;
+  transition:0.3s;
+}
+.profile:hover{
+  transform:translateY(-10px);
+}
+.profile img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+}
+.profile h3{font-size:28px;color:#ff416c;margin-bottom:10px;}
+.profile p{font-size:16px;color:#555;margin-bottom:15px;}
+.profile ul{
+  list-style:none;
+  padding:0;
+  text-align:left;
+  margin-top:15px;
+}
+.profile ul li{
+  margin-bottom:10px;
+  position:relative;
+  padding-left:20px;
+}
+.profile ul li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#ff416c;
+}
+
+/* TUITION FEES */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+.section h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:36px;
+  color:#ff416c;
+}
+.fees{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  text-align:center;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+.card h3{color:#ff4b2b;}
+.card .price{font-size:24px;font-weight:bold;margin-top:10px;color:#00796b;}
+.enroll{
+  text-align:center;
+  margin-top:25px;
+}
+.enroll a{
+  background:#ff416c;
+  color:white;
+  padding:15px 35px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+.enroll a:hover{
+  background:#ff7b91;
+  transform:scale(1.05);
+}
+
+
+/* CONTACT */
+.contact{
+  background:#0d1b2a;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+.contact h2{
+  margin-bottom:25px;
+}
+.social-links a{
+  margin:0 15px;
+  display:inline-block;
+  transition:0.3s;
+}
+.social-links img{
+  width:45px;
+  height:45px;
+}
+.social-links a:hover img{
+  transform:scale(1.2);
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+.dev{margin-top:10px;font-size:14px;color:#aaa;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<img src="img/logo.png" alt="Logo">
+<div>
+<a href="#hero-main">Home</a>
+<a href="#classes">Free Classes</a>
+<a href="#team">Instructor & CEO</a>
+<a href="#fees">Tuition Fees</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-main" id="hero-main">
+<h1>Aditya Coaching Center</h1>
+<p>Learn Programming, Competitive Programming & CSE Prep Online</p>
+<div class="cta"><a href="https://portfolio-gcr4.vercel.app/?fbclid=IwY2xjawQXe3tleHRuA2FlbQIxMABicmlkETF3eE5SZlhuUkpscTA2cHhqc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHkzZHF0ietJG9ai9_YZyskwUNeZYu8oq7xW3vdUTQe59hnJBxQm2LzRTfbuD_aem_L-D-_-dPgBNfssmpcWKGqg" target="_blank">Enroll Now</a></div>
+</div>
+
+<!-- FREE CLASSES -->
+<div class="hero" id="classes">
+<h2>Free Classes</h2>
+<p>Watch selected YouTube tutorials</p>
+<div class="videos">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YI-Eg9ysl8Q?si=EHPIH0uHZI2n3C-P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/htBrU0KRCOw?si=X6DApS2piqQ9hsRN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nSBwr695CsM?si=9-voIL4IL9TyO0Qa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HwwO2nDjpkE?si=0eO0kHqjajYgr_li" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nSBwr695CsM?si=_DsyTEcn1c02IAKz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<!-- INSTRUCTOR + ACADEMIC PROFILE -->
+<div class="section" id="team">
+<h2>Instructor & CEO</h2>
+<div class="team">
+<div class="profile">
+<img src="img/profilemain.jpeg" alt="Instructor">
+<h3>Aditya Shil</h3>
+<p>CEO & Instructor</p>
+<p>CSE student passionate about teaching programming, web development, and leading this coaching center.</p>
+<ul>
+<li>B.Sc in CSE - North South University</li>
+<li>Competitive Programming Expert</li>
+<li>Web Development: HTML, CSS, JavaScript, React</li>
+<li>Certified in [Your Certifications]</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- TUITION FEES -->
+<div class="section" id="fees">
+<h2>Tuition Fees</h2>
+<div class="fees">
+<div class="card">
+<h3>Programming Basics</h3>
+<p>HTML, C, Java</p>
+<div class="price">৳2000 / month</div>
+</div>
+<div class="card">
+<h3>Competitive Programming</h3>
+<p>Algorithms & Problem Solving</p>
+<div class="price">৳3000 / month</div>
+</div>
+<div class="card">
+<h3>Web Development</h3>
+<p>HTML, CSS, React</p>
+<div class="price">৳3500 / month</div>
+</div>
+<div class="card">
+<h3>University CSE Prep</h3>
+<p>Programming + Math</p>
+<div class="price">৳2500 / month</div>
+</div>
+</div>
+<div class="enroll"><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank">Enroll Now</a></div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+<h2>Contact</h2>
+<p>Teacher: Aditya Shil</p>
+<p>Phone: 017XXXXXXXX</p>
+<p>Email: aditya@email.com</p>
+<p>Location: Dhaka, Bangladesh</p>
+<div class="social-links">
+<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook"></a>
+<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fportfolio-gcr4.vercel.app%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExd3hOUmZYblJKbHEwNnB4anNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5M2RxdInrSRvWovf2GcrJMFDXmWLvKKu8Vt73VE0HufYZyQcUJti80U327gw_aem_L-D-_-dPgBNfssmpcWKGqg&h=AT5DpceG8kWn2_O1yUjl5beAC9wQCDbKqXx4O_n7Hh0_oGW0cB2D0jDM-wew2x77fdbRybWw_CXGBu5-Bc-UnmesXNVD0GzIqnnGE6y25uLJE-GSXgDkmrMxJem4rzjhgYPZ" target="_blank"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="dev">Developed by Aditya Shil</div>
+<div class="dev">This is a demo website</div>
+<div class="dev">Visit Developer's portfolio:<div class="cta"><a href="https://portfolio-gcr4.vercel.app/?fbclid=IwY2xjawQXe3tleHRuA2FlbQIxMABicmlkETF3eE5SZlhuUkpscTA2cHhqc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHkzZHF0ietJG9ai9_YZyskwUNeZYu8oq7xW3vdUTQe59hnJBxQm2LzRTfbuD_aem_L-D-_-dPgBNfssmpcWKGqg" target="_blank">Portfolio</a></div></div>
+</footer>
+
+</body>
+</html>
