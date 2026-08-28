@@ -2,8 +2,7 @@
 
 # ShikhaGhor — SSC Coaching Center
 
-A responsive landing page for **ShikhaGhor**, an SSC coaching center website designed for Class 9–10 students in Bangladesh.
-
+A responsive landing page for **ShikhaGhor**, an SSC coaching center website designed for students .
 ## 📌 About the Project
 
 ShikhaGhor provides information about SSC coaching programs, free learning resources, instructors, tuition fees, and enrollment.
